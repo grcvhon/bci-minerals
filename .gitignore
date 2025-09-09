@@ -1,2 +1,7 @@
 *.docx
 *.xlsx
+.Rproj.user
+.Rhistory
+*.Rproj
+sampling_design/output/
+sampling_design/nw-shelf/
