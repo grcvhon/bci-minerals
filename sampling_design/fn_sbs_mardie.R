@@ -111,9 +111,37 @@ sbs_mardie <- function(
     geom_sf(data = nw_crop_utm) + 
     geom_sf(data = st_as_sf(st_geometry(grid_polygons[grids_with_sbs_points, ])))
   
+  
+  
+  # Adjust inclusion probability by preferred survey site - import preferred site approximate coordinates
+  prefSite <- read_csv("./mardie_sites.csv", show_col_types = FALSE)
+  
+  # Convert to sf object
+  prefSite_sf <- st_as_sf(prefSite, coords = c('longitude_dd', 'latitude_dd'), crs = 4326)
+  prefSite_sf_utm <- st_transform(prefSite_sf, crs = 32750)
+  
+  # Plot
+  ggplot() + geom_sf(data = nw_crop_utm) + geom_sf(data = st_as_sf(st_geometry(grid_polygons[grids_with_sbs_points, ]))) + geom_sf(data = prefSite_sf_utm)
+  
+  # Here weighting preferred sites to be 10-fold higher for inclusion than non-preferred site cells
+  grid_polygons$nprefSite <- (10*(lengths(st_intersects(grid_polygons, prefSite_sf_utm))>0))+1
+  
+  # Now can re-do spatially balanced sampling with increased inclusion probability if cell has preferred site
+  sbs_points_prefSite <- grts(grid_polygons, n_base = 20, aux_var = "nprefSite")
+  
+  sbs_points_prefSite_sf <- st_as_sf(sbs_points_prefSite$sites_base)
+  
+  # Extract only the SBS selected grid cells
+  grids_with_sbs_points_prefSite <- st_intersects(sbs_points_prefSite_sf, grid_polygons, sparse = T) %>% as.numeric()
+  
+  # Plot the results
+  #ggplot() + geom_sf(data = nw_crop_utm) + geom_sf(data = st_as_sf(st_geometry(grid_polygons[grids_with_sbs_points_prefSite, ]))) + geom_sf(data = prefSite_sf_utm, col = 'blue', pch = '+', size = 4)
+  
+  
+  
   # Save selected design of grid/blocks as a shapefile ----
   # Make the selected grid a shapefile
-  selected_grid_cells_sf <- grid_polygons[grids_with_sbs_points, ]
+  selected_grid_cells_sf <- grid_polygons[grids_with_sbs_points_prefSite, ]
   
   dir <- paste0("./output/seed",seed,"_",block_size,"m_",n_block,"blocks_",n_trns,"samplers/")
   dir.create(dir)
@@ -253,14 +281,16 @@ sbs_mardie <- function(
   
 }
   
-sbs_mardie(seed = 123, 
+sbs_mardie(seed = 23, 
            n_block = 20, 
            block_size = 1000, 
            n_trns = 60, 
-           xmin = 115.46636, 
-           xmax = 116.18, 
-           ymin = -21.61159, 
-           ymax = -20.98266)
+           xmin = 115.61768, 
+           xmax = 116.12871, 
+           ymin = -21.35492, 
+           ymax = -20.71698)
 
+# Approximate extent from provided map
+# xmin = 115.61768, xmax = 116.12871, ymin = -21.35492, ymax = -20.71698
 
 
