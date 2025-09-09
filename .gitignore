@@ -5,3 +5,4 @@
 *.Rproj
 sampling_design/output/
 sampling_design/nw-shelf/
+sampling_design/.Rhistory
