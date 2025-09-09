@@ -5,3 +5,9 @@
 *.Rproj
 sampling_design/nw-shelf/*
 sampling_design/.Rhistory
+nw-shelf/NWShelf.dbf
+nw-shelf/NWShelf.prj
+.gitignore
+nw-shelf/NWShelf.qpj
+nw-shelf/NWShelf.shp
+nw-shelf/NWShelf.shx
