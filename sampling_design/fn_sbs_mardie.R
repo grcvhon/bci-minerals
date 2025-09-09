@@ -281,7 +281,7 @@ sbs_mardie <- function(
   
 }
   
-sbs_mardie(seed = 23, 
+sbs_mardie(seed = 777, 
            n_block = 20, 
            block_size = 1000, 
            n_trns = 60, 
