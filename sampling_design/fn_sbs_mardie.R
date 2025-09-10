@@ -5,7 +5,7 @@
 #
 #    Install the package `dssduoa`, a modified version
 #    of the package `dssd` (Marshall 2023)
-#    devtools::install_github(repo = https://github.com/grcvhon/dssduoa.git)
+#    devtools::install_github(repo = "https://github.com/grcvhon/dssduoa.git")
 #
 ###############################################################################
 
@@ -94,7 +94,6 @@ sbs_mardie <- function(
   set.seed(seed)
   
   # grts - select a spatially balanced sample - without weighting to any particular site
-  # *** the first application of this is with the SBS design for Dampier transects ***
   sbs_points <- grts(st_intersection(nw_crop_utm[1], st_union(grid_polygons)), n_base = n_block)
   plot(sbs_points)
   
