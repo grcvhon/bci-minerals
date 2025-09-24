@@ -143,6 +143,13 @@ sbs_mardie <- function(
   # Make the selected grid a shapefile
   selected_grid_cells_sf <- grid_polygons[grids_with_sbs_points_prefSite, ]
   
+  #fd <- paste0("./output/seed",seed,"_",block_size,"m_",n_block,"blocks_",n_trns,"samplers/")
+  #if (dir.exists(fd)) {
+  #  #Delete file if it exists
+  #  print(paste0("Deleting existing directory... seed",seed,"_",block_size,"m_",n_block,"blocks_",n_trns,"samplers/"))
+  #  unlink(fd)
+  #}
+  
   dir <- paste0("./output/seed",seed,"_",block_size,"m_",n_block,"blocks_",n_trns,"samplers/")
   dir.create(dir)
   
@@ -250,7 +257,7 @@ sbs_mardie <- function(
   trns <- st_transform(block_transect_shape_GDA94, crs = 4326)
   
   # generate a leaflet map
-  leaflet() %>% 
+  interactive <- leaflet() %>% 
     addTiles() %>%
     addFullscreenControl() %>% 
     addMeasurePathToolbar() %>%
@@ -279,9 +286,20 @@ sbs_mardie <- function(
                 opacity = 100,
                 weight = 1)
   
+  library(htmlwidgets)
+  
+  # save output as interactive html
+  fi <- paste0(dir, "seed", seed, "_", block_size, "m_sbs_interactive.html")
+  if (file.exists(fi)) {
+    #Delete file if it exists
+    print(paste0("Deleting existing HTML file...", "seed", seed, "_", block_size, "m_sbs_interactive.html"))
+    file.remove(fi)
+  }
+  
+  saveWidget(interactive, file = paste0(dir, "seed", seed, "_", block_size, "m_sbs_interactive.html"))
 }
   
-sbs_mardie(seed = 777, 
+sbs_mardie(seed = 23, 
            n_block = 20, 
            block_size = 1000, 
            n_trns = 60, 
