@@ -1,7 +1,7 @@
 *.docx
 *.xlsx
 .Rproj.user
-*/*.Rhistory
+sampling_design/*.Rhistory
 */*.Rproj
 */*.RData
 sampling_design/nw-shelf/*
