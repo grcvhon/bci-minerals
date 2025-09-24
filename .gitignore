@@ -1,8 +1,9 @@
 *.docx
 *.xlsx
 .Rproj.user
-.Rhistory
-*.Rproj
+*/*.Rhistory
+*/*.Rproj
+*/*.RData
 sampling_design/nw-shelf/*
 sampling_design/.Rhistory
 nw-shelf/NWShelf.dbf
