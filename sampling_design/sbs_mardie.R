@@ -177,7 +177,8 @@ blok <- st_transform(sampling_block_shape_GDA94, crs = 4326)
 trns <- st_transform(block_transect_shape_GDA94, crs = 4326)
 
 # generate a leaflet map
-leaflet() %>% 
+int_map <- 
+  leaflet() %>% 
   addTiles() %>%
   addFullscreenControl() %>% 
   addMeasurePathToolbar() %>%
@@ -206,5 +207,6 @@ leaflet() %>%
               opacity = 100,
               weight = 1)
 
-
+library(htmlwidgets)
+saveWidget(int_map, file = "./int_map.html")
 
