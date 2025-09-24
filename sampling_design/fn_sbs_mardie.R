@@ -54,26 +54,26 @@ sbs_mardie <- function(
                            ymin = ymin, 
                            ymax = ymax)
   
-  print(mapview(nw_shape_crop))
+  #print(mapview(nw_shape_crop))
   
-  print(quote = FALSE, "Check map...")
+  #print(quote = FALSE, "Check map...")
   
   # Check map and answer question.
   # Ask the user a yes/no question
-  user_response <- askYesNo("Are you happy with the map extent? (see Viewer tab in R)")
+  #user_response <- askYesNo("Are you happy with the map extent? (see Viewer tab in R)")
   
   # Check the user's response and proceed accordingly
-  if (isTRUE(user_response)) {
-    print(quote = FALSE, "User chose 'Yes'. Executing the next part of the script...")
-    # Place the code to execute if the user answers "yes" here
-  } else if (isFALSE(user_response)) {
-    print(quote = FALSE, "User chose 'No'. Modify map extent.")
-    # Place the code to execute if the user answers "no" here, or use `q()` to quit
-    # q(save = "no") # Uncomment to quit the R session
-  } else {
-    print(quote = FALSE, "Cancelled by user.")
-    # Handle cases where the user might cancel or provide an invalid input
-  }
+  #if (isTRUE(user_response)) {
+  #  print(quote = FALSE, "User chose 'Yes'. Executing the next part of the script...")
+  #  # Place the code to execute if the user answers "yes" here
+  #} else if (isFALSE(user_response)) {
+  #  print(quote = FALSE, "User chose 'No'. Modify map extent.")
+  #  # Place the code to execute if the user answers "no" here, or use `q()` to quit
+  #  # q(save = "no") # Uncomment to quit the R session
+  #} else {
+  #  print(quote = FALSE, "Cancelled by user.")
+  #  # Handle cases where the user might cancel or provide an invalid input
+  #}
   
   nw_crop_utm <- st_transform(nw_shape_crop, crs = 32750)
   region_nwsh <- make.region(shape = nw_crop_utm)
@@ -298,7 +298,7 @@ sbs_mardie <- function(
   saveWidget(interactive, file = paste0(dir, "seed", seed, "_", block_size, "m_sbs_interactive.html"))
 }
   
-sbs_mardie(seed = 23, 
+sbs_mardie(seed = 777, 
            n_block = 20, 
            block_size = 1000, 
            n_trns = 60, 
