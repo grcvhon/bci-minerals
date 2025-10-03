@@ -9,7 +9,7 @@ We will generate a spatially balanced sampling design across the Mardie region w
 <p align = "center">
 <img src="https://github.com/grcvhon/bci-minerals/blob/main/image.png", width = 50%, height = 50%>
 <div align = "center">
-<i>(Source: Daniella Hanf, O2 Marine)</i>
+<i><sup>(Source: Daniella Hanf, O2 Marine)</sup></i>
 </div>
 </p>
 
