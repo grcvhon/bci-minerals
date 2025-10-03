@@ -6,7 +6,7 @@
 We will generate a spatially balanced sampling design across the Mardie region while taking into account indicative Short-nosed sea snake sampling sites as presented in the image below. That is, our design will prioritise these identified sites when generating a spatially balance design. 
 
 <p align = center>
-<img src="https://github.com/grcvhon/bci-minerals/blob/main/image.png", width = 80%, height = 80%>
+<img src="https://github.com/grcvhon/bci-minerals/blob/main/image.png", width = 50%, height = 50%>
 </p>
 
 ###### (Source: Daniella Hanf, O2 Marine)
