@@ -13,3 +13,5 @@ nw-shelf/NWShelf.qpj
 nw-shelf/NWShelf.shp
 nw-shelf/NWShelf.shx
 html_style.txt
+.vscode/
+markdown-pdf.css
