@@ -3,7 +3,7 @@
 
 <br>
 
-We will generate a spatially balanced sampling design across the Mardie region while taking into account indicative Short-nosed sea snake sampling sites as presented in the image below. That is, our design will prioritise these identified sites when generating a spatially balance design. 
+We will generate a spatially balanced sampling design across the Mardie region while taking into account indicative Short-nosed sea snake sampling sites as presented in the image below. That is, our design will prioritise these identified sites when generating our design. 
 
 
 <p align = "center">
@@ -13,9 +13,7 @@ We will generate a spatially balanced sampling design across the Mardie region w
 </div>
 </p>
 
-
-
-Here, "spatially balanced" means that we have placed sampling sites within our survey boundary that will yield data which will adequately represent the diversity (and potentially abundance) of the Short-nosed sea snake (as well as other sea snake species) in the area.
+Here, "spatially balanced" means that the sites we will place within the survey boundary (approximated from the map above)will yield adequate, representative data of the sea snakes that occur in the area.
 
 
 
