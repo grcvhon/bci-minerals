@@ -10,7 +10,7 @@ We will generate a spatially balanced sampling design across the Mardie region w
 </div>
 </p>
 
-Here, "spatially balanced" means that the sites we will place within the survey boundary (approximated from the map above)will yield adequate, representative data of the sea snakes that occur in the area including the Short-nosed sea snake (<i>Aipyusurus apraefrontalis</i>). We created a custom function (`sbs_mardie`) that will automate the entire process (see function script [here](https://github.com/grcvhon/bci-minerals/blob/main/sampling_design/fn_sbs_mardie.R)). The function and required arguments are shown below:
+Here, "spatially balanced" means that the sites we will place within the survey boundary (approximated from the map above) will yield adequate, representative data of the sea snakes that occur in the area including the Short-nosed sea snake (<i>Aipyusurus apraefrontalis</i>). We created a custom function (`sbs_mardie`) that will automate the entire process (see function script [here](https://github.com/grcvhon/bci-minerals/blob/main/sampling_design/fn_sbs_mardie.R)). The function and required arguments are shown below:
 ```r
 sbs_mardie(seed = 777,          # iteration ID
            n_block = 20,        # total number of blocks (squares) that will have transect lines
@@ -30,6 +30,8 @@ This function produces the following output:
 3) a `.gpx` version of the `.csv` file which may be useful for boat interfaces
 4) an interactive map (`.html`); and
 5) a record of the arguments used for the unique iteration (`.txt`)
+
+In the output, we will see that the transects we generated form zig-zag lines inside the blocks. This approach increases the efficiency of sampling within these 1 km x 1 km blocks. Each transect line is 1 km in length and, from experience for a quiet set of transects i.e. block with no snakes, takes about 3 minutes to traverse under ideal weather conditions (= 9 minutes per block).
 
 Below is a preview of the output:
 ```
