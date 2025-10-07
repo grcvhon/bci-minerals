@@ -371,14 +371,17 @@ code {
   </script>
 <h1 id="generating-a-sampling-design-across-the-mardie-region">Generating a sampling design across the Mardie region</h1>
 <h6 id="i-note-the-sampling-design-below-shows-an-indicative-approach-and-is-therefore-not-finali"><i>*** Note: The sampling design below shows an indicative approach and is therefore NOT final.</i></h6>
-<p>We will generate a spatially balanced sampling design across the Mardie region while taking into account indicative Short-nosed sea snake sampling sites as presented in the image below. That is, our design will prioritise these identified sites when generating our design.</p>
+<p>We will generate a spatially balanced sampling design across the Mardie region while taking into account indicative sampling sites for the Short-nosed sea snake as presented in the image below. That is, our design will prioritise these identified sites when generating a spatially balanced design.</p>
 <p align = "center">
 <img src="https://raw.githubusercontent.com/grcvhon/bci-minerals/main/image.png", width = 50%, height = 50%>
 <div align = "center">
 <i><sup>(Source: Daniella Hanf, O2 Marine)</sup></i>
 </div>
 </p>
-<p>Here, &quot;spatially balanced&quot; means that the sites we will place within the survey boundary (approximated from the map above) will yield adequate, representative data of the sea snakes that occur in the area including the Short-nosed sea snake (<i>Aipyusurus apraefrontalis</i>). We created a custom function (<code>sbs_mardie</code>) that will automate the entire process (see function script <a href="https://github.com/grcvhon/bci-minerals/blob/main/sampling_design/fn_sbs_mardie.R">here</a>). The function and required arguments are shown below:</p>
+<p>Here, &quot;spatially balanced&quot; means that the sampling sites we will place within the survey boundary (approximated from the map above) will yield adequate, representative data of all the sea snake species that occur within the area including the Short-nosed sea snake (<i>Aipyusurus apraefrontalis</i>).</p>
+<p>To execute this systematic sampling approach, the process will place <i>x</i> number of blocks that each have <i>y</i> number of transects. These blocks will be placed within the survey area irrespective of its biotic and abiotic characteristics and will only optimise for spatially balanced sampling coverage. However, as mentioned earlier, we have modified the process so that we can still generate a spatially balanced design while putting more weight on the indicative sampling sites for the Short-nosed sea snake.</p>
+<p>Typically, we generate a 1 km x 1 km block containing three 1-km transect lines connected in a zig-zag configuration, starting from one of the corners of the block. Using a zig-zag formation increases the efficiency of sampling within the block. From experience, a quiet set of transects i.e. block with no snakes takes about 3 minutes to traverse under ideal weather conditions (= 9 minutes per block).</p>
+<p>We created a custom function (<code>sbs_mardie</code>) that will automate the entire process (see function script <a href="https://github.com/grcvhon/bci-minerals/blob/main/sampling_design/fn_sbs_mardie.R">here</a>). The function and required arguments are shown below:</p>
 <pre class="hljs"><code><div>sbs_mardie(seed = <span class="hljs-number">777</span>,          <span class="hljs-comment"># iteration ID</span>
            n_block = <span class="hljs-number">20</span>,        <span class="hljs-comment"># total number of blocks (squares) that will have transect lines</span>
            block_size = <span class="hljs-number">1000</span>,   <span class="hljs-comment"># length of each side of the square (in metres)</span>
@@ -395,11 +398,11 @@ code {
 <ol>
 <li>shapefiles (<code>.shp</code>) of the blocks and of the transects</li>
 <li>a <code>.csv</code> file containing start and end coordinates of the transects</li>
-<li>a <code>.gpx</code> version of the <code>.csv</code> file which may be useful for boat interfaces</li>
+<li>a <code>.gpx</code> version of the <code>.csv</code> file which can be read into <a href="https://www.google.com/maps/about/mymaps/">Google My Maps</a> and/or boating-specific applications</li>
 <li>an interactive map (<code>.html</code>); and</li>
 <li>a record of the arguments used for the unique iteration (<code>.txt</code>)</li>
 </ol>
-<p>In the output, we will see that the transects we generated form zig-zag lines inside the blocks. This approach increases the efficiency of sampling within these 1 km x 1 km blocks. Each transect line is 1 km in length and, from experience for a quiet set of transects i.e. block with no snakes, takes about 3 minutes to traverse under ideal weather conditions (= 9 minutes per block).</p>
+<p>The function can be run multiple times to generate a new and unique design every time.</p>
 <p>Below is a preview of the output:</p>
 <pre class="hljs"><code><div>Arguments used: 
     seed = 23, n_block = 20, block_size = 1000, n_trns = 60, 
@@ -412,6 +415,5 @@ code {
 <sup>Spatially balanced sampling design of 20 total blocks and 60 total transect lines (ID: 23).</sup>
 </div>
 </p>
-
 </body>
 </html>

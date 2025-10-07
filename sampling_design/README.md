@@ -1,7 +1,7 @@
 # Generating a sampling design across the Mardie region
 ###### <i>*** Note: The sampling design below shows an indicative approach and is therefore NOT final.</i>
 
-We will generate a spatially balanced sampling design across the Mardie region while taking into account indicative Short-nosed sea snake sampling sites as presented in the image below. That is, our design will prioritise these identified sites when generating our design. 
+We will generate a spatially balanced sampling design across the Mardie region while taking into account indicative sampling sites for the Short-nosed sea snake as presented in the image below. That is, our design will prioritise these identified sites when generating a spatially balanced design. 
 
 <p align = "center">
 <img src="https://raw.githubusercontent.com/grcvhon/bci-minerals/main/image.png", width = 50%, height = 50%>
@@ -10,7 +10,13 @@ We will generate a spatially balanced sampling design across the Mardie region w
 </div>
 </p>
 
-Here, "spatially balanced" means that the sites we will place within the survey boundary (approximated from the map above) will yield adequate, representative data of the sea snakes that occur in the area including the Short-nosed sea snake (<i>Aipyusurus apraefrontalis</i>). We created a custom function (`sbs_mardie`) that will automate the entire process (see function script [here](https://github.com/grcvhon/bci-minerals/blob/main/sampling_design/fn_sbs_mardie.R)). The function and required arguments are shown below:
+Here, "spatially balanced" means that the sampling sites we will place within the survey boundary (approximated from the map above) will yield adequate, representative data of all the sea snake species that occur within the area including the Short-nosed sea snake (<i>Aipyusurus apraefrontalis</i>). 
+
+To execute this systematic sampling approach, the process will place <i>x</i> number of blocks that each have <i>y</i> number of transects. These blocks will be placed within the survey area irrespective of its biotic and abiotic characteristics and will only optimise for spatially balanced sampling coverage. However, as mentioned earlier, we have modified the process so that we can still generate a spatially balanced design while putting more weight on the indicative sampling sites for the Short-nosed sea snake. 
+
+Typically, we generate a 1 km x 1 km block containing three 1-km transect lines connected in a zig-zag configuration, starting from one of the corners of the block. Using a zig-zag formation increases the efficiency of sampling within the block. From experience, a quiet set of transects i.e. block with no snakes takes about 3 minutes to traverse under ideal weather conditions (= 9 minutes per block).
+
+We created a custom function (`sbs_mardie`) that will automate the entire process (see function script [here](https://github.com/grcvhon/bci-minerals/blob/main/sampling_design/fn_sbs_mardie.R)). The function and required arguments are shown below:
 ```r
 sbs_mardie(seed = 777,          # iteration ID
            n_block = 20,        # total number of blocks (squares) that will have transect lines
@@ -27,11 +33,11 @@ sbs_mardie(seed = 777,          # iteration ID
 This function produces the following output: 
 1) shapefiles (`.shp`) of the blocks and of the transects
 2) a `.csv` file containing start and end coordinates of the transects 
-3) a `.gpx` version of the `.csv` file which may be useful for boat interfaces
+3) a `.gpx` version of the `.csv` file which can be read into [Google My Maps](https://www.google.com/maps/about/mymaps/) and/or boating-specific applications
 4) an interactive map (`.html`); and
 5) a record of the arguments used for the unique iteration (`.txt`)
 
-In the output, we will see that the transects we generated form zig-zag lines inside the blocks. This approach increases the efficiency of sampling within these 1 km x 1 km blocks. Each transect line is 1 km in length and, from experience for a quiet set of transects i.e. block with no snakes, takes about 3 minutes to traverse under ideal weather conditions (= 9 minutes per block).
+The function can be run multiple times to generate a new and unique design every time.
 
 Below is a preview of the output:
 ```
@@ -47,6 +53,3 @@ Arguments used:
 <sup>Spatially balanced sampling design of 20 total blocks and 60 total transect lines (ID: 23).</sup>
 </div>
 </p>
-
-
-
