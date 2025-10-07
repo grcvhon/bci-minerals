@@ -1,7 +1,7 @@
 # Generating a sampling design across the Mardie region
 ###### <i>*** Note: The sampling design below shows an indicative approach and is therefore NOT final.</i>
 
-We will generate a spatially balanced sampling design across the Mardie region while taking into account indicative sampling sites for the Short-nosed sea snake as presented in the image below. That is, our design will prioritise these identified sites when generating a spatially balanced design. 
+We will generate a spatially balanced sampling design across the Mardie region while taking into account indicative sampling sites for the Short-nosed sea snake (<i>Aipyusurus apraefrontalis</i>) as presented in the image below. That is, our design will prioritise these identified sites when generating a spatially balanced design. 
 
 <p align = "center">
 <img src="https://raw.githubusercontent.com/grcvhon/bci-minerals/main/image.png", width = 50%, height = 50%>
@@ -10,11 +10,11 @@ We will generate a spatially balanced sampling design across the Mardie region w
 </div>
 </p>
 
-Here, "spatially balanced" means that the sampling sites we will place within the survey boundary (approximated from the map above) will yield adequate, representative data of all the sea snake species that occur within the area including the Short-nosed sea snake (<i>Aipyusurus apraefrontalis</i>). 
+Here, "spatially balanced" means that the sampling sites we will place within the survey boundary (approximated from the map above) will most likely yield adequate representative data of the sea snake species occurring within the area including the Short-nosed sea snake. 
 
-To execute this systematic sampling approach, the process will place <i>x</i> number of blocks that each have <i>y</i> number of transects. These blocks will be placed within the survey area irrespective of its biotic and abiotic characteristics and will only optimise for spatially balanced sampling coverage. However, as mentioned earlier, we have modified the process so that we can still generate a spatially balanced design while putting more weight on the indicative sampling sites for the Short-nosed sea snake. 
+To execute this systematic sampling approach, the process will place <i>x</i> number of blocks that each have <i>y</i> number of transect lines. These blocks will be placed within the survey area irrespective of its biotic and abiotic characteristics and will only optimise for spatially balanced sampling coverage. However, as mentioned earlier, we have modified the process so that we can still generate a spatially balanced design while putting more weight on the indicative sampling sites for the Short-nosed sea snake. 
 
-Typically, we generate a 1 km x 1 km block containing three 1-km transect lines connected in a zig-zag configuration, starting from one of the corners of the block. Using a zig-zag formation increases the efficiency of sampling within the block. From experience, a quiet set of transects i.e. block with no snakes takes about 3 minutes to traverse under ideal weather conditions (= 9 minutes per block).
+Typically, we generate a 1 km<sup>2</sup>-block containing three 1-km transect lines connected in a zig-zag configuration, starting from one corner of the block. Using a zig-zag formation increases the efficiency of sampling within the block. From experience, a quiet set of transect lines i.e. a block with no snakes takes about 10 minutes to traverse under ideal weather conditions.
 
 We created a custom function (`sbs_mardie`) that will automate the entire process (see function script [here](https://github.com/grcvhon/bci-minerals/blob/main/sampling_design/fn_sbs_mardie.R)). The function and required arguments are shown below:
 ```r
@@ -37,7 +37,7 @@ This function produces the following output:
 4) an interactive map (`.html`); and
 5) a record of the arguments used for the unique iteration (`.txt`)
 
-The function can be run multiple times to generate a new and unique design every time.
+The function can be run multiple times using a different `seed` to generate a new and unique design every time.
 
 Below is a preview of the output:
 ```
