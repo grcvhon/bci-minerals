@@ -290,7 +290,6 @@ pre code {
 	display: block;
 	overflow-x: auto;
 	color: #4d4d4c;
-	padding: 0.5em;
 }
 
 .hljs-emphasis {
@@ -309,7 +308,8 @@ pre code {
 
  body {
 	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
-	padding: 40px 500px;
+	padding: 0px 0px;
+	margin: 3% 25%;
 }
 
 pre {
@@ -319,6 +319,7 @@ pre {
 	overflow-x: auto;
 	white-space: pre-wrap;
 	overflow-wrap: break-word;
+	margin: 0.5%;
 }
 
 pre:not(.hljs) {
@@ -345,6 +346,8 @@ code {
 	color: #8e2922; /* Change the old color so it seems less like an error */
 	background:#eeeeee;
 	font-size: inherit;
+	border-radius: 3px;
+	padding: 2px 2px;
 }
 
 /* Page Break : use <div class="page"/> to insert page break
@@ -375,7 +378,7 @@ code {
 <i><sup>(Source: Daniella Hanf, O2 Marine)</sup></i>
 </div>
 </p>
-<p>Here, &quot;spatially balanced&quot; means that the sites we will place within the survey boundary (approximated from the map above)will yield adequate, representative data of the sea snakes that occur in the area including the Short-nosed sea snake (<i>Aipyusurus apraefrontalis</i>). We created a custom function (<code>sbs_mardie</code>) that will automate the entire process (see function script <a href="https://github.com/grcvhon/bci-minerals/blob/main/sampling_design/fn_sbs_mardie.R">here</a>). The function and required arguments are shown below:</p>
+<p>Here, &quot;spatially balanced&quot; means that the sites we will place within the survey boundary (approximated from the map above) will yield adequate, representative data of the sea snakes that occur in the area including the Short-nosed sea snake (<i>Aipyusurus apraefrontalis</i>). We created a custom function (<code>sbs_mardie</code>) that will automate the entire process (see function script <a href="https://github.com/grcvhon/bci-minerals/blob/main/sampling_design/fn_sbs_mardie.R">here</a>). The function and required arguments are shown below:</p>
 <pre class="hljs"><code><div>sbs_mardie(seed = <span class="hljs-number">777</span>,          <span class="hljs-comment"># iteration ID</span>
            n_block = <span class="hljs-number">20</span>,        <span class="hljs-comment"># total number of blocks (squares) that will have transect lines</span>
            block_size = <span class="hljs-number">1000</span>,   <span class="hljs-comment"># length of each side of the square (in metres)</span>
@@ -396,6 +399,7 @@ code {
 <li>an interactive map (<code>.html</code>); and</li>
 <li>a record of the arguments used for the unique iteration (<code>.txt</code>)</li>
 </ol>
+<p>In the output, we will see that the transects we generated form zig-zag lines inside the blocks. This approach increases the efficiency of sampling within these 1 km x 1 km blocks. Each transect line is 1 km in length and, from experience for a quiet set of transects i.e. block with no snakes, takes about 3 minutes to traverse under ideal weather conditions (= 9 minutes per block).</p>
 <p>Below is a preview of the output:</p>
 <pre class="hljs"><code><div>Arguments used: 
     seed = 23, n_block = 20, block_size = 1000, n_trns = 60, 
