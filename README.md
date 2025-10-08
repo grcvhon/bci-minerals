@@ -1,7 +1,7 @@
 ## Short-nosed sea snake study in Mardie, Western Australia
 This repository contains code and input data associated with the study of the Short-nosed sea snake (<i>Aipysurus apraefrontalis</i>) in Mardie, Western Australia. This project is hosted by [BCI Minerals](https://www.bciminerals.com.au/) in coordination with [O2 Marine](https://o2marine.com.au/).
 
-Publicly available documents regarding this project are available from the [Environmental Protection Agency](https://www.epa.wa.gov.au/) website of the Government of Western Australia.
+Publicly-available documents related to this project are available on the [Environmental Protection Agency](https://www.epa.wa.gov.au/) website of the Government of Western Australia. Quick links to these documents are also provided in the following:
 
 * [Mardie Project](https://www.epa.wa.gov.au/proposals/mardie-project)<br>
     <sub>The proposal includes a seawater intake, evaporation ponds, processing plant, bitterns disposal pipeline and outfall, desalination plant, freshwater supply bores and associated infrastructure. The proposal would include disturbance of up to 9,365 hectares on shore, and up to 40 hectares of marine environment.</sub>
