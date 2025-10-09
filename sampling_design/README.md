@@ -4,14 +4,14 @@ Discussion is ongoing as to how best assess sea snake biodiversity and populatio
 
 #### <b>List of contents</b><br>
 1) [SBS design prioritising BRUV deployment sites & SNSS sampling sites](#1-spatially-balanced-sampling-design-prioritising-bruv-deployment-sites--snss-sampling-sites)
-2) [SBS design + BRUV deployment  sites & SNSS sampling sites + dredge area + spoil area](#2-sbs-design--bruv-deployment--sites--snss-sampling-sites--dredge-area--spoil-area)
+2) [SBS design prioritising BRUV deployment sites & SNSS sampling sites, dredge area, spoil area](#2-sbs-design-prioritising-bruv-deployment-sites--snss-sampling-sites-dredge-area-spoil-area)
 
-###### <i>SBS = Spatially balanced sampling; SNSS = Short-nosed sea snake</i>
+<sup><i>SBS = Spatially balanced sampling; SNSS = Short-nosed sea snake</i></sup>
 
 ##
 ### 1) Spatially balanced sampling design prioritising BRUV deployment sites & SNSS sampling sites
 
-We will generate a spatially balanced sampling design across the Mardie region while taking into account indicative sampling sites for the Short-nosed sea snake (<i>Aipyusurus apraefrontalis</i>) as presented in the image below. That is, our design will prioritise these identified sites/will increased their inclusion probability when generating a spatially balanced design. 
+We will generate a spatially balanced sampling design across the Mardie region while taking into account indicative sampling sites for the Short-nosed sea snake (<i>Aipyusurus apraefrontalis</i>) as presented in the image below. That is, our design will prioritise these identified sites/will increase their inclusion probability when generating a spatially balanced design. 
 
 <p align = "center">
 <img src="https://raw.githubusercontent.com/grcvhon/bci-minerals/main/misc/image.png", width = 50%, height = 50%>
@@ -67,9 +67,17 @@ Arguments used:
 [Back to top](#)
 ##
 
-### 2) SBS design + BRUV deployment  sites & SNSS sampling sites + dredge area + spoil area
+### 2) SBS design prioritising BRUV deployment sites & SNSS sampling sites, dredge area, spoil area
 
 In this version, we incorporate the dredge and spoil areas of the BCI Minerals Project when coming up with a spatially balanced sampling design. Details about these areas are available via the [Mardie Project
 Dredge and Spoil Disposal Management Plan](https://www.epa.wa.gov.au/sites/default/files/Referral_Documentation/Att3_DSDMP%20%28O2%20Marine%2C%202025%29.pdf) (pp. 10,11).
 
-We first show the dredge and spoil areas in the context of the Mardie region.
+We first show the dredge and spoil areas in the context of the region.<br>
+{PLOT dredge and spoil area on map}
+
+We think that it is important to assess the levels of sea snake diversity and/or abundance before 
+
+
+ and after dredging and spoil dumping activities in the area.
+
+ the impact of dredging and dumping of spoil on sea snake diversity and/or abundance in the area before and after 
