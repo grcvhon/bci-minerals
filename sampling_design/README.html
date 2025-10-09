@@ -370,10 +370,18 @@ code {
     });
   </script>
 <h1 id="generating-a-sampling-design-across-the-mardie-region">Generating a sampling design across the Mardie region</h1>
-<h6 id="i-note-the-sampling-design-below-shows-an-indicative-approach-and-is-therefore-not-finali"><i>*** Note: The sampling design below shows an indicative approach and is therefore NOT final.</i></h6>
-<p>We will generate a spatially balanced sampling design across the Mardie region while taking into account indicative sampling sites for the Short-nosed sea snake (<i>Aipyusurus apraefrontalis</i>) as presented in the image below. That is, our design will prioritise these identified sites when generating a spatially balanced design.</p>
+<p>Discussion is ongoing as to how best assess sea snake biodiversity and populations in the Mardie region in relation to the BCI Minerals Project. Below are links to different versions of generated designs which were developed following communications with O2 Marine.</p>
+<h4 id="blist-of-contentsbbr"><b>List of contents</b><br></h4>
+<ol>
+<li><a href="#1-spatially-balanced-sampling-design-prioritising-bruv-deployment-sites--snss-sampling-sites">SBS design prioritising BRUV deployment sites &amp; SNSS sampling sites</a></li>
+<li><a href="#2-sbs-design-prioritising-bruv-deployment-sites--snss-sampling-sites-dredge-area-spoil-area">SBS design prioritising BRUV deployment sites &amp; SNSS sampling sites, dredge area, spoil area</a></li>
+</ol>
+<p><sup><i>SBS = Spatially balanced sampling; SNSS = Short-nosed sea snake</i></sup></p>
+<h2 id=""></h2>
+<h3 id="1-spatially-balanced-sampling-design-prioritising-bruv-deployment-sites--snss-sampling-sites">1) Spatially balanced sampling design prioritising BRUV deployment sites &amp; SNSS sampling sites</h3>
+<p>We will generate a spatially balanced sampling design across the Mardie region while taking into account indicative sampling sites for the Short-nosed sea snake (<i>Aipyusurus apraefrontalis</i>) as presented in the image below. That is, our design will prioritise these identified sites/will increased their inclusion probability when generating a spatially balanced design.</p>
 <p align = "center">
-<img src="https://raw.githubusercontent.com/grcvhon/bci-minerals/main/image.png", width = 50%, height = 50%>
+<img src="https://raw.githubusercontent.com/grcvhon/bci-minerals/main/misc/image.png", width = 50%, height = 50%>
 <div align = "center">
 <i><sup>(Source: Daniella Hanf, O2 Marine)</sup></i>
 </div>
@@ -403,17 +411,24 @@ code {
 <li>a record of the arguments used for the unique iteration (<code>.txt</code>)</li>
 </ol>
 <p>The function can be run multiple times using a different <code>seed</code> to generate a new and unique design every time.</p>
-<p>Below is a preview of the output:</p>
+<p>Below is a preview of the output. Associated output files for the set of arguments used can be found <a href="https://github.com/grcvhon/bci-minerals/tree/main/sampling_design/output/seed23_1000m_20blocks_60samplers">here</a>.</p>
 <pre class="hljs"><code><div>Arguments used: 
     seed = 23, n_block = 20, block_size = 1000, n_trns = 60, 
     xmin = 115.61768, xmax = 116.12871, 
     ymin = -21.35492, ymax = -20.71698
 </div></code></pre>
 <p align = "center">
-<img src="https://raw.githubusercontent.com/grcvhon/bci-minerals/main/seed23_preview.png", width = 50%, height = 50%>
+<img src="https://raw.githubusercontent.com/grcvhon/bci-minerals/main/misc/seed23_preview.png", width = 50%, height = 50%>
 <div align = "center">
 <sup>Spatially balanced sampling design of 20 total blocks and 60 total transect lines (ID: 23).</sup>
 </div>
 </p>
+<p><a href="#">Back to top</a></p>
+<h2 id=""></h2>
+<h3 id="2-sbs-design-prioritising-bruv-deployment-sites--snss-sampling-sites-dredge-area-spoil-area">2) SBS design prioritising BRUV deployment sites &amp; SNSS sampling sites, dredge area, spoil area</h3>
+<p>In this version, we incorporate the dredge and spoil areas of the BCI Minerals Project when coming up with a spatially balanced sampling design. Details about these areas are available via the <a href="https://www.epa.wa.gov.au/sites/default/files/Referral_Documentation/Att3_DSDMP%20%28O2%20Marine%2C%202025%29.pdf">Mardie Project
+Dredge and Spoil Disposal Management Plan</a> (pp. 10,11).</p>
+<p>We first show the dredge and spoil areas in the context of the region.</p>
+
 </body>
 </html>
