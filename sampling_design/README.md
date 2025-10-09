@@ -1,10 +1,20 @@
 # Generating a sampling design across the Mardie region
-###### <i>*** Note: The sampling design below shows an indicative approach and is therefore NOT final.</i>
 
-We will generate a spatially balanced sampling design across the Mardie region while taking into account indicative sampling sites for the Short-nosed sea snake (<i>Aipyusurus apraefrontalis</i>) as presented in the image below. That is, our design will prioritise these identified sites when generating a spatially balanced design. 
+Discussion is ongoing as to how best assess sea snake biodiversity and populations in the Mardie region in relation to the BCI Minerals Project. Below are links to different versions of generated designs which were developed following communications with O2 Marine.
+
+<b>List of contents</b><br>
+1) [SBS design prioritising BRUV deployment sites & Short-nosed sea snake sampling sites](#1-spatially-balanced-sampling-design-prioritising-bruv-sites--short-nosed-sea-snake-sampling-sites)
+2) [SBS design + BRUV & Short-nosed sea snake sampling sites + dredge area + spoil area](#2-sbs-design--bruv--short-nosed-sea-snake-sampling-sites--dredge-area--spoil-area)
+###### SBS = Spatially balanced sampling
+
+
+##
+### 1) Spatially balanced sampling design prioritising BRUV sites & Short-nosed sea snake sampling sites
+
+We will generate a spatially balanced sampling design across the Mardie region while taking into account indicative sampling sites for the Short-nosed sea snake (<i>Aipyusurus apraefrontalis</i>) as presented in the image below. That is, our design will prioritise these identified sites/will increased their inclusion probability when generating a spatially balanced design. 
 
 <p align = "center">
-<img src="https://raw.githubusercontent.com/grcvhon/bci-minerals/main/image.png", width = 50%, height = 50%>
+<img src="https://raw.githubusercontent.com/grcvhon/bci-minerals/main/misc/image.png", width = 50%, height = 50%>
 <div align = "center">
 <i><sup>(Source: Daniella Hanf, O2 Marine)</sup></i>
 </div>
@@ -48,8 +58,10 @@ Arguments used:
 ```
 
 <p align = "center">
-<img src="https://raw.githubusercontent.com/grcvhon/bci-minerals/main/seed23_preview.png", width = 50%, height = 50%>
+<img src="https://raw.githubusercontent.com/grcvhon/bci-minerals/main/misc/seed23_preview.png", width = 50%, height = 50%>
 <div align = "center">
 <sup>Spatially balanced sampling design of 20 total blocks and 60 total transect lines (ID: 23).</sup>
 </div>
 </p>
+
+### 2) SBS design + BRUV & Short-nosed sea snake sampling sites + dredge area + spoil area
