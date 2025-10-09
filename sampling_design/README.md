@@ -2,14 +2,14 @@
 
 Discussion is ongoing as to how best assess sea snake biodiversity and populations in the Mardie region in relation to the BCI Minerals Project. Below are links to different versions of generated designs which were developed following communications with O2 Marine.
 
-<b>List of contents</b><br>
-1) [SBS design prioritising BRUV deployment sites & Short-nosed sea snake sampling sites](#1-spatially-balanced-sampling-design-prioritising-bruv-sites--short-nosed-sea-snake-sampling-sites)
-2) [SBS design + BRUV & Short-nosed sea snake sampling sites + dredge area + spoil area](#2-sbs-design--bruv--short-nosed-sea-snake-sampling-sites--dredge-area--spoil-area)
-###### SBS = Spatially balanced sampling
+#### <b>List of contents</b><br>
+1) [SBS design prioritising BRUV deployment sites & SNSS sampling sites](#1-spatially-balanced-sampling-design-prioritising-bruv-deployment-sites--snss-sampling-sites)
+2) [SBS design + BRUV deployment  sites & SNSS sampling sites + dredge area + spoil area](#2-sbs-design--bruv-deployment--sites--snss-sampling-sites--dredge-area--spoil-area)
 
+###### <i>SBS = Spatially balanced sampling; SNSS = Short-nosed sea snake</i>
 
 ##
-### 1) Spatially balanced sampling design prioritising BRUV sites & Short-nosed sea snake sampling sites
+### 1) Spatially balanced sampling design prioritising BRUV deployment sites & SNSS sampling sites
 
 We will generate a spatially balanced sampling design across the Mardie region while taking into account indicative sampling sites for the Short-nosed sea snake (<i>Aipyusurus apraefrontalis</i>) as presented in the image below. That is, our design will prioritise these identified sites/will increased their inclusion probability when generating a spatially balanced design. 
 
@@ -49,7 +49,7 @@ This function produces the following output:
 
 The function can be run multiple times using a different `seed` to generate a new and unique design every time.
 
-Below is a preview of the output:
+Below is a preview of the output. Associated output files for the set of arguments used can be found [here](https://github.com/grcvhon/bci-minerals/tree/main/sampling_design/output/seed23_1000m_20blocks_60samplers).
 ```
 Arguments used: 
     seed = 23, n_block = 20, block_size = 1000, n_trns = 60, 
@@ -64,4 +64,12 @@ Arguments used:
 </div>
 </p>
 
-### 2) SBS design + BRUV & Short-nosed sea snake sampling sites + dredge area + spoil area
+[Back to top](#)
+##
+
+### 2) SBS design + BRUV deployment  sites & SNSS sampling sites + dredge area + spoil area
+
+In this version, we incorporate the dredge and spoil areas of the BCI Minerals Project when coming up with a spatially balanced sampling design. Details about these areas are available via the [Mardie Project
+Dredge and Spoil Disposal Management Plan](https://www.epa.wa.gov.au/sites/default/files/Referral_Documentation/Att3_DSDMP%20%28O2%20Marine%2C%202025%29.pdf) (pp. 10,11).
+
+We first show the dredge and spoil areas in the context of the Mardie region.
