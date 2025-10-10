@@ -57,6 +57,8 @@ Arguments used:
     ymin = -21.35492, ymax = -20.71698
 ```
 
+
+
 <p align = "center">
 <img src="https://raw.githubusercontent.com/grcvhon/bci-minerals/main/misc/seed23_preview.png", width = 50%, height = 50%>
 <div align = "center">
@@ -73,11 +75,16 @@ In this version, we incorporate the dredge and spoil areas of the BCI Minerals P
 Dredge and Spoil Disposal Management Plan](https://www.epa.wa.gov.au/sites/default/files/Referral_Documentation/Att3_DSDMP%20%28O2%20Marine%2C%202025%29.pdf) (pp. 10,11).
 
 We first show the dredge and spoil areas in the context of the region.<br>
-{PLOT dredge and spoil area on map}
 
-We think that it is important to assess the levels of sea snake diversity and/or abundance before 
+<p align = "center">
+<img src="https://raw.githubusercontent.com/grcvhon/bci-minerals/main/misc/overview_impact.png", width = 50%, height = 50%>
+<div align = "center">
+<sup>
+Dredge area (closer to shore) is approximately 0.59 km<sup>2</sup>. Spoil dump area (offshore rectangle) is approximately 0.30 km<sup>2</sup>.
+</sup>
+</div>
+</p>
 
+We think that it is important to assess the levels of sea snake diversity and/or abundance before and after dredging and dumping of spoil. Therefore, we will incorporate these areas into our sampling design. Since we want to explicitly have transect lines within these identified areas, we will add them manually after we have generated our spatially balanced sampling design.
 
- and after dredging and spoil dumping activities in the area.
-
- the impact of dredging and dumping of spoil on sea snake diversity and/or abundance in the area before and after 
+[Back to top](#)
