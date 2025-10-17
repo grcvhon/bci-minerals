@@ -17,7 +17,7 @@ require(raster)
 nw_shape <- st_read("./nw-shelf/NWShelf.shp", quiet = TRUE)
 
 # crop to area of interest (modify values if too large of a region)
-nw_shape_crop <- st_crop(nw_shape, xmin = 115.61768, xmax = 116.12871, ymin = -21.35492, ymax = -20.71698)
+nw_shape_crop <- st_crop(nw_shape, xmin = 115.61768, xmax = 116.12871, ymin = -21.35492, ymax = -20.81760)
 
 mapview(nw_shape_crop)
 

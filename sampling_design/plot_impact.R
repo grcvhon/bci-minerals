@@ -38,8 +38,6 @@ dredge_area <- sf::st_sfc(dredge_poly_geom, crs = sf::st_crs(dredge_points))
 dredge_area <- sf::st_sf(geometry = dredge_area)
 plot(dredge_area)
 
-mapview::mapview(spoil_area) + mapview::mapview(dredge_area)
-
 #### *** SPOIL *** ####
 
 # 1. Read and convert to sf points
@@ -77,6 +75,7 @@ multi_leaf
 st_area(dredge_area) # 0.59 km^2
 st_area(spoil_area) # 0.30 km^2
 
+mapview::mapview(spoil_area) + mapview::mapview(dredge_area)
 
 #### *** APPROXIMATE EXTENT *** ####
 
@@ -106,7 +105,52 @@ nw_shp_crop_leaf <- leaflet() %>%
 nw_shp_crop_leaf
 
 
+dredge_trn <- read.csv("./impact/dredge_transects.csv")
+dredge_trn$x <- dredge_trn$x - 0.0030
+dredge_trn$y <- dredge_trn$y + 0.0135
+north_dredge_trn_sf <- sf::st_as_sf(dredge_trn, coords = c("x", "y"), crs = 4326)
+
+ndredge_trn_lnstrng <- north_dredge_trn_sf %>%
+  group_by(group) %>%
+  summarise(do_union = FALSE)
+
+north_dredge_transect_lines <- ndredge_trn_lnstrng %>%
+  st_cast("LINESTRING")
+
+
+dredge_trn <- read.csv("./impact/dredge_transects.csv")
+dredge_trn$x <- dredge_trn$x - 0.0065
+dredge_trn$y <- dredge_trn$y - 0.0250
+south_dredge_trn_sf <- sf::st_as_sf(dredge_trn, coords = c("x", "y"), crs = 4326)
+
+sdredge_trn_lnstrng <- south_dredge_trn_sf %>%
+  group_by(group) %>%
+  summarise(do_union = FALSE)
+
+south_dredge_transect_lines <- sdredge_trn_lnstrng %>%
+  st_cast("LINESTRING")
+
+
+mapview(north_dredge_transect_lines) + mapview(south_dredge_transect_lines) + 
+  mapview(dredge_area) + mapview(spoil_transect_lines) + mapview(spoil_area)
 
 
 
+spoil_transect_lines <- spoil_trn_lnstrng %>%
+  st_cast("LINESTRING")
+mapview(spoil_transect_lines) + mapview(spoil_area)
 
+
+spoil_trn <- read.csv("./impact/spoil_transects.csv")
+spoil_trn$x <- spoil_trn$x - 0.0045
+spoil_trn$y <- spoil_trn$y - 0.0045
+spoil_trn_sf <- sf::st_as_sf(spoil_trn, coords = c("x", "y"), crs = 4326)
+mapview(spoil_trn_sf) + mapview(spoil_area)
+
+spoil_trn_lnstrng <- spoil_trn_sf %>%
+  group_by(group) %>%
+  summarise(do_union = FALSE)
+
+spoil_transect_lines <- spoil_trn_lnstrng %>%
+  st_cast("LINESTRING")
+mapview(spoil_transect_lines) + mapview(spoil_area)
