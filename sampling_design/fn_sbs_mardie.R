@@ -255,9 +255,56 @@ sbs_mardie <- function(
   blok <- st_transform(sampling_block_shape_GDA94, crs = 4326)
   trns <- st_transform(block_transect_shape_GDA94, crs = 4326)
   
+  ### code for impact
+  
+  dredge_trn <- read.csv("./impact/dredge_transects.csv")
+  dredge_trn$x <- dredge_trn$x - 0.0030
+  dredge_trn$y <- dredge_trn$y + 0.0135
+  north_dredge_trn_sf <- sf::st_as_sf(dredge_trn, coords = c("x", "y"), crs = 4326)
+  
+  ndredge_trn_lnstrng <- north_dredge_trn_sf %>%
+    group_by(group) %>%
+    summarise(do_union = FALSE)
+  
+  north_dredge_transect_lines <- ndredge_trn_lnstrng %>%
+    st_cast("LINESTRING")
+  
+  
+  dredge_trn <- read.csv("./impact/dredge_transects.csv")
+  dredge_trn$x <- dredge_trn$x - 0.0065
+  dredge_trn$y <- dredge_trn$y - 0.0250
+  south_dredge_trn_sf <- sf::st_as_sf(dredge_trn, coords = c("x", "y"), crs = 4326)
+  
+  sdredge_trn_lnstrng <- south_dredge_trn_sf %>%
+    group_by(group) %>%
+    summarise(do_union = FALSE)
+  
+  south_dredge_transect_lines <- sdredge_trn_lnstrng %>%
+    st_cast("LINESTRING")
+  
+  spoil_transect_lines <- spoil_trn_lnstrng %>%
+    st_cast("LINESTRING")
+  mapview(spoil_transect_lines) + mapview(spoil_area)
+  
+  
+  spoil_trn <- read.csv("./impact/spoil_transects.csv")
+  spoil_trn$x <- spoil_trn$x - 0.0045
+  spoil_trn$y <- spoil_trn$y - 0.0045
+  spoil_trn_sf <- sf::st_as_sf(spoil_trn, coords = c("x", "y"), crs = 4326)
+  mapview(spoil_trn_sf) + mapview(spoil_area)
+  
+  spoil_trn_lnstrng <- spoil_trn_sf %>%
+    group_by(group) %>%
+    summarise(do_union = FALSE)
+  
+  spoil_transect_lines <- spoil_trn_lnstrng %>%
+    st_cast("LINESTRING")
+  
+  
+  
   # generate a leaflet map
   interactive <- leaflet() %>% 
-    addTiles() %>%
+    addProviderTiles("Esri.WorldImagery") %>%
     addFullscreenControl() %>% 
     addMeasurePathToolbar() %>%
     addFullscreenControl() %>% 
@@ -283,6 +330,21 @@ sbs_mardie <- function(
                 fillOpacity = 0,
                 color = "orangered",
                 opacity = 100,
+                weight = 1) %>% 
+    addPolygons(data = north_dredge_transect_lines,
+                fillOpacity = 0,
+                color = "cyan",
+                opacity = 100,
+                weight = 1) %>% 
+    addPolygons(data = south_dredge_transect_lines,
+                fillOpacity = 0,
+                color = "cyan",
+                opacity = 100,
+                weight = 1) %>% 
+    addPolygons(data = spoil_transect_lines,
+                fillOpacity = 0,
+                color = "cyan",
+                opacity = 100,
                 weight = 1)
   
   library(htmlwidgets)
@@ -298,16 +360,18 @@ sbs_mardie <- function(
   saveWidget(interactive, file = paste0(dir, "seed", seed, "_", block_size, "m_sbs_interactive.html"))
 }
   
-sbs_mardie(seed = 777, 
+sbs_mardie(seed = 909, 
            n_block = 20, 
            block_size = 1000, 
            n_trns = 60, 
            xmin = 115.61768, 
            xmax = 116.12871, 
            ymin = -21.35492, 
-           ymax = -20.71698)
+           ymax = -20.81760)
 
 # Approximate extent from provided map
 # xmin = 115.61768, xmax = 116.12871, ymin = -21.35492, ymax = -20.71698
+# new ymax = -20.81760
+
 
 
