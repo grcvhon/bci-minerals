@@ -6,6 +6,7 @@
 */*.RData
 sampling_design/nw-shelf/*
 sampling_design/.Rhistory
+sampling_design/deliver/
 nw-shelf/NWShelf.dbf
 nw-shelf/NWShelf.prj
 .gitignore
