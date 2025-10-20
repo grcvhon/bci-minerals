@@ -5,7 +5,7 @@ We will generate a spatially balanced sampling design across the Mardie region w
 <p align = "center">
 <img src="https://raw.githubusercontent.com/grcvhon/bci-minerals/main/misc/image.png", width = 40.3%, height = 40.3%> <img src="https://raw.githubusercontent.com/grcvhon/bci-minerals/main/misc/seed23_preview.png", width = 43%, height = 43%>
 <div align = "center">
-<sup>Left: Indicative Short-nosed sea snake sampling sites (Source: Daniella Hanf, O2 Marine); Right: Spatially-balanced sampling design (initial).</sup>
+<sup>Left: Indicative Short-nosed sea snake sampling sites. Annotation also points to indicative BRUV deployment sites (Source: Daniella Hanf, O2 Marine);<br>Right: Spatially-balanced sampling design (initial). Twenty yellow sampling blocks with 3 transect lines (red) in zig-zag configuration.</sup>
 </div>
 </p>
 
