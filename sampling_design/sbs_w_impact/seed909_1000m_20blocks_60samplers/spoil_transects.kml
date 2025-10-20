@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+<Document id="root_doc">
+<Schema name="spoil_transects" id="spoil_transects">
+	<SimpleField name="cmt" type="string"></SimpleField>
+	<SimpleField name="desc" type="string"></SimpleField>
+	<SimpleField name="src" type="string"></SimpleField>
+	<SimpleField name="link1_href" type="string"></SimpleField>
+	<SimpleField name="link1_text" type="string"></SimpleField>
+	<SimpleField name="link1_type" type="string"></SimpleField>
+	<SimpleField name="link2_href" type="string"></SimpleField>
+	<SimpleField name="link2_text" type="string"></SimpleField>
+	<SimpleField name="link2_type" type="string"></SimpleField>
+	<SimpleField name="number" type="int"></SimpleField>
+	<SimpleField name="type" type="string"></SimpleField>
+	<SimpleField name="ogr_group" type="string"></SimpleField>
+</Schema>
+<Folder><name>spoil_transects</name>
+  <Placemark id="spoil_transects.1">
+	<name>Spoil 1</name>
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#spoil_transects">
+		<SimpleData name="ogr_group">A</SimpleData>
+	</SchemaData></ExtendedData>
+      <LineString><coordinates>115.84771,-20.84582 115.8573369,-20.84286036</coordinates></LineString>
+  </Placemark>
+  <Placemark id="spoil_transects.2">
+	<name>Spoil 2</name>
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#spoil_transects">
+		<SimpleData name="ogr_group">B</SimpleData>
+	</SchemaData></ExtendedData>
+      <LineString><coordinates>115.8573369,-20.84286036 115.8477466,-20.83979688</coordinates></LineString>
+  </Placemark>
+  <Placemark id="spoil_transects.3">
+	<name>Spoil 3</name>
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#spoil_transects">
+		<SimpleData name="ogr_group">C</SimpleData>
+	</SchemaData></ExtendedData>
+      <LineString><coordinates>115.8477466,-20.83979688 115.8573739,-20.83683727</coordinates></LineString>
+  </Placemark>
+</Folder>
+</Document></kml>
