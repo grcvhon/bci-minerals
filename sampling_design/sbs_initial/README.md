@@ -1,4 +1,4 @@
-### Spatially-balanced sampling design - initial
+## Spatially-balanced sampling design - initial
 
 We will generate a spatially balanced sampling design across the Mardie region while taking into account indicative sampling sites for the Short-nosed sea snake (<i>Aipyusurus apraefrontalis</i>) as presented in the image below. That is, our design will prioritise these identified sites/will increase their inclusion probability when generating a spatially balanced design. 
 
