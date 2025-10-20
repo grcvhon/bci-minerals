@@ -4,8 +4,8 @@ This repository contains code and input data associated with the study of the Sh
 ### Generating sampling design across the Mardie region
 Ongoing discussions with O2 Marine led with different versions of the proposed sampling design. We present sampling design versions below for reference.
 
-* [Spatially-balanced sampling design - plain (`sbs_plain`)](https://github.com/grcvhon/bci-minerals/tree/main/sampling_design/output/sbs_plain): This design was initially generated following the provision of the map of indicative sampling sites for the Short-nosed sea snake.
-* [Spatially-balanced sampling design with impact (`sbs_w_impact`)](https://github.com/grcvhon/bci-minerals/tree/main/sampling_design/output/sbs_w_impact): This design provides a spatially-balanced survey of the region including survey of pre-determined sites: dredge and spoil grounds. The extent was also reduced to just north of the spoil grounds.
+* [Spatially-balanced sampling design - plain](https://github.com/grcvhon/bci-minerals/tree/main/sampling_design/output/sbs_plain): This design was initially generated following the provision of the map of indicative sampling sites for the Short-nosed sea snake.
+* [Spatially-balanced sampling design with impact](https://github.com/grcvhon/bci-minerals/tree/main/sampling_design/output/sbs_w_impact): This design provides a spatially-balanced survey of the region including survey of pre-determined sites: dredge and spoil grounds. The extent was also reduced to just north of the spoil grounds.
 
 ### Public documentation
 
