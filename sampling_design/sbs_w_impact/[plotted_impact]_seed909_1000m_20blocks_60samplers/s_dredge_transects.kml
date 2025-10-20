@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+<Document id="root_doc">
+<Schema name="s_dredge_transects" id="s_dredge_transects">
+	<SimpleField name="cmt" type="string"></SimpleField>
+	<SimpleField name="desc" type="string"></SimpleField>
+	<SimpleField name="src" type="string"></SimpleField>
+	<SimpleField name="link1_href" type="string"></SimpleField>
+	<SimpleField name="link1_text" type="string"></SimpleField>
+	<SimpleField name="link1_type" type="string"></SimpleField>
+	<SimpleField name="link2_href" type="string"></SimpleField>
+	<SimpleField name="link2_text" type="string"></SimpleField>
+	<SimpleField name="link2_type" type="string"></SimpleField>
+	<SimpleField name="number" type="int"></SimpleField>
+	<SimpleField name="type" type="string"></SimpleField>
+	<SimpleField name="ogr_group" type="string"></SimpleField>
+</Schema>
+<Folder><name>s_dredge_transects</name>
+  <Placemark>
+	<name>South Dredge 1</name>
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#s_dredge_transects">
+		<SimpleData name="ogr_group">A</SimpleData>
+	</SchemaData></ExtendedData>
+      <LineString><coordinates>115.9329,-21.05 115.9425269,-21.04704036</coordinates></LineString>
+  </Placemark>
+  <Placemark>
+	<name>South Dredge 2</name>
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#s_dredge_transects">
+		<SimpleData name="ogr_group">B</SimpleData>
+	</SchemaData></ExtendedData>
+      <LineString><coordinates>115.9425269,-21.04704036 115.9329366,-21.04397688</coordinates></LineString>
+  </Placemark>
+  <Placemark>
+	<name>South Dredge 3</name>
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#s_dredge_transects">
+		<SimpleData name="ogr_group">C</SimpleData>
+	</SchemaData></ExtendedData>
+      <LineString><coordinates>115.9329366,-21.04397688 115.9425639,-21.04101727</coordinates></LineString>
+  </Placemark>
+</Folder>
+</Document></kml>
