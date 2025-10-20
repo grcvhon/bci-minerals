@@ -9,8 +9,6 @@ Ongoing discussions with O2 Marine led with different versions of the proposed s
 * [<b>Spatially-balanced sampling design - plain (`sbs_plain`)</b>](https://github.com/grcvhon/bci-minerals/tree/b9376b26e253c899e39eefa2ba42512c9c5d189b/sampling_design/output/sbs_plain): This design was initially generated following the provision of the map of indicative sampling sites for the Short-nosed sea snake.
 * [<b>Spatially-balanced sampling design with impact (`sbs_w_impact`)</b>](https://github.com/grcvhon/bci-minerals/tree/b9376b26e253c899e39eefa2ba42512c9c5d189b/sampling_design/output/sbs_w_impact): This design provides a spatially-balanced survey of the region including survey of pre-determined sites: dredge and spoil grounds. The extent was also reduced to just north of the spoil grounds.
 
-<br>
-
 ### Public documentation
 
 Publicly-available documents related to this project are available on the [Environmental Protection Agency](https://www.epa.wa.gov.au/) website of the Government of Western Australia. Quick links to these documents are also provided in the following:
