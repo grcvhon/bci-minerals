@@ -1,7 +1,7 @@
 ## Short-nosed sea snake study in Mardie, Western Australia
 This repository contains code and input data associated with the study of the Short-nosed sea snake (<i>Aipysurus apraefrontalis</i>) in Mardie, Western Australia. This project is hosted by [BCI Minerals](https://www.bciminerals.com.au/) in coordination with [O2 Marine](https://o2marine.com.au/).
 
-### Generating sampling design across the Mardie region
+### Survey design
 Ongoing discussions with O2 Marine led with different versions of the proposed sampling design. We present sampling design versions below for reference.
 
 * [Spatially-balanced sampling design - initial](https://github.com/grcvhon/bci-minerals/tree/main/sampling_design/sbs_initial): This design was generated following the provision of the map of indicative sampling sites for the Short-nosed sea snake and/or BRUV sites.
