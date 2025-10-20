@@ -217,6 +217,11 @@ sbs_mardie <- function(
   }
   
   write.transects(block_transects, dsn = paste0(dir, "seed", seed, "_", block_size, "m_sbs_transects.gpx"), proj4string = '+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs')
+  # convert transects gpx to kml
+  trn_gpx <- st_read(paste0(dir, "seed", seed, "_", block_size, "m_sbs_transects.gpx"), layer = "routes")
+  trn_gpx$Name <- paste0("Transect ", seq_len(nrow(trn_gpx)))
+  st_write(trn_gpx, dsn = paste0(dir, "seed", seed, "_", block_size, "m_sbs_transects.kml"), driver = "KML")
+  
   
   # write provided arguments to text
   file_conn <- file(paste0(dir, "README_seed", seed, "_", block_size, "m_sbs_transects.txt"))
@@ -282,11 +287,6 @@ sbs_mardie <- function(
   south_dredge_transect_lines <- sdredge_trn_lnstrng %>%
     st_cast("LINESTRING")
   
-  spoil_transect_lines <- spoil_trn_lnstrng %>%
-    st_cast("LINESTRING")
-  mapview(spoil_transect_lines) + mapview(spoil_area)
-  
-  
   spoil_trn <- read.csv("./impact/spoil_transects.csv")
   spoil_trn$x <- spoil_trn$x - 0.0045
   spoil_trn$y <- spoil_trn$y - 0.0045
@@ -300,7 +300,56 @@ sbs_mardie <- function(
   spoil_transect_lines <- spoil_trn_lnstrng %>%
     st_cast("LINESTRING")
   
+  # save impact as gpx and kml
   
+  library(sf)
+  
+  # Optional: check the geometry type
+  #st_geometry_type(spoil_transect_lines)
+  
+  # Convert CRS to WGS84 (required for GPX: EPSG:4326)
+  north_dredge_transect_lines <- st_transform(north_dredge_transect_lines, 4326)
+  south_dredge_transect_lines <- st_transform(south_dredge_transect_lines, 4326)
+  spoil_transect_lines <- st_transform(spoil_transect_lines, 4326)
+  
+  f_north <- paste0(dir, "n_dredge_transects.gpx")
+  if (file.exists(f_north)) {
+    #Delete file if it exists
+    print(paste0("Rewriting n_dredge_transects.gpx file..."))
+    file.remove(f_north)
+  }
+  
+  f_south <- paste0(dir, "s_dredge_transects.gpx")
+  if (file.exists(f_south)) {
+    #Delete file if it exists
+    print(paste0("Rewriting s_dredge_transects.gpx file..."))
+    file.remove(f_south)
+  }
+  
+  f_spoil <- paste0(dir, "spoil_transects.gpx")
+  if (file.exists(f_spoil)) {
+    #Delete file if it exists
+    print(paste0("Rewriting spoil_transects.gpx file..."))
+    file.remove(f_spoil)
+  }
+  
+  # save impact as gpx
+  st_write(north_dredge_transect_lines, dsn = paste0(dir, "n_dredge_transects.gpx"), driver = "GPX", dataset_options = "GPX_USE_EXTENSIONS=YES")
+  st_write(south_dredge_transect_lines, dsn = paste0(dir, "s_dredge_transects.gpx"), driver = "GPX", dataset_options = "GPX_USE_EXTENSIONS=YES")
+  st_write(spoil_transect_lines, dsn = paste0(dir, "spoil_transects.gpx"), driver = "GPX", dataset_options = "GPX_USE_EXTENSIONS=YES")
+  
+  # save impact as kml
+  ndredge_gpx <- st_read(dsn = paste0(dir, "n_dredge_transects.gpx"), layer = "routes")
+  ndredge_gpx$Name <- paste0("North Dredge ", seq_len(nrow(ndredge_gpx)))
+  st_write(ndredge_gpx, dsn = paste0(dir, "n_dredge_transects.kml"), driver = "KML")
+  
+  sdredge_gpx <- st_read(dsn = paste0(dir, "s_dredge_transects.gpx"), layer = "routes")
+  sdredge_gpx$Name <- paste0("South Dredge ", seq_len(nrow(sdredge_gpx)))
+  st_write(sdredge_gpx, dsn = paste0(dir, "s_dredge_transects.kml"), driver = "KML")
+  
+  spoil_gpx <- st_read(paste0(dir, "spoil_transects.gpx"), layer = "routes")
+  spoil_gpx$Name <- paste0("Spoil ", seq_len(nrow(spoil_gpx)))
+  st_write(spoil_gpx, dsn = paste0(dir, "spoil_transects.kml"), driver = "KML")
   
   # generate a leaflet map
   interactive <- leaflet() %>% 
@@ -372,6 +421,3 @@ sbs_mardie(seed = 909,
 # Approximate extent from provided map
 # xmin = 115.61768, xmax = 116.12871, ymin = -21.35492, ymax = -20.71698
 # new ymax = -20.81760
-
-
-
