@@ -42,7 +42,7 @@ sbs_mardie <- function(
   require(utils)
   
   # set workdir
-  setwd("C:/Users/a1235304/Dropbox/BCI-minerals/sampling_design")
+  setwd("C:/Users/garci/Dropbox/BCI-minerals/sampling_design")
   
   # load nwshelf shape
   nw_shape <- st_read("./nw-shelf/NWShelf.shp", quiet = TRUE)
@@ -347,9 +347,36 @@ sbs_mardie <- function(
   sdredge_gpx$Name <- paste0("South Dredge ", seq_len(nrow(sdredge_gpx)))
   st_write(sdredge_gpx, dsn = paste0(dir, "s_dredge_transects.kml"), driver = "KML")
   
-  spoil_gpx <- st_read(paste0(dir, "spoil_transects.gpx"), layer = "routes")
+  spoil_gpx <- st_read(dsn = paste0(dir, "spoil_transects.gpx"), layer = "routes")
   spoil_gpx$Name <- paste0("Spoil ", seq_len(nrow(spoil_gpx)))
   st_write(spoil_gpx, dsn = paste0(dir, "spoil_transects.kml"), driver = "KML")
+  
+  # save impact as shp
+  ndredge_kml <- st_read(dsn = paste0(dir, "n_dredge_transects.kml"))
+  ndredge_shp <- st_write(ndredge_kml, dsn = paste0(dir, "n_dredge_transects.shp"))
+  
+  sdredge_kml <- st_read(dsn = paste0(dir, "s_dredge_transects.kml"))
+  sdredge_shp <- st_write(sdredge_kml, dsn = paste0(dir, "s_dredge_transects.shp"))
+  
+  spoil_kml <- st_read(dsn = paste0(dir, "spoil_transects.kml"))
+  spoil_shp <- st_write(spoil_kml, dsn = paste0(dir, "spoil_transects.shp"))
+  
+  
+  
+  # impact and other features
+  disturbance <- st_read("../o2marine/Disturbance_Footprint_7850/Disturbance_Footprint_7850.shp")
+  disturbance <- st_transform(disturbance, crs = 4326)
+  village <- disturbance %>% filter(Name == "Village")
+  village <- st_make_valid(village)
+  
+  jetty <- disturbance %>% filter(Name == "Jetty")
+  jetty <- st_make_valid(jetty)
+  
+  dredge_ch <- disturbance %>% filter(Name == "Dredge Channel")
+  dredge_ch <- st_make_valid(dredge_ch)
+  
+  spoilgrounds <- st_read("../o2marine/Spoilground-DMPA4/DMPA4 (Proposed).shp")
+  spoilgrounds <- st_transform(spoilgrounds, crs = 4326)
   
   # generate a leaflet map
   interactive <- leaflet() %>% 
@@ -394,6 +421,30 @@ sbs_mardie <- function(
                 fillOpacity = 0,
                 color = "cyan",
                 opacity = 100,
+                weight = 1)%>% 
+    addPolygons(data = village, 
+                fillColor = "#00ff0a", 
+                fillOpacity = 100,
+                color = "#00ff0a",
+                opacity = 100,
+                weight = 1) %>% 
+    addPolygons(data = jetty, 
+                fillColor = "#00ff0a", 
+                fillOpacity = 100,
+                color = "#00ff0a",
+                opacity = 100,
+                weight = 1) %>% 
+    addPolygons(data = dredge_ch, 
+                fillColor = "#00ff0a", 
+                fillOpacity = 100,
+                color = "#00ff0a",
+                opacity = 100,
+                weight = 1) %>% 
+    addPolygons(data = spoilgrounds, 
+                fillColor = "#00ff0a", 
+                fillOpacity = 100,
+                color = "#00ff0a",
+                opacity = 100,
                 weight = 1)
   
   library(htmlwidgets)
@@ -409,7 +460,7 @@ sbs_mardie <- function(
   saveWidget(interactive, file = paste0(dir, "seed", seed, "_", block_size, "m_sbs_interactive.html"))
 }
   
-sbs_mardie(seed = 909, 
+sbs_mardie(seed = 10000, 
            n_block = 20, 
            block_size = 1000, 
            n_trns = 60, 
