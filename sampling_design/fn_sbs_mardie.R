@@ -42,7 +42,7 @@ sbs_mardie <- function(
   require(utils)
   
   # set workdir
-  setwd("C:/Users/garci/Dropbox/BCI-minerals/sampling_design")
+  setwd("C:/Users/a1235304/Dropbox/BCI-minerals/sampling_design")
   
   # load nwshelf shape
   nw_shape <- st_read("./nw-shelf/NWShelf.shp", quiet = TRUE)
@@ -460,7 +460,7 @@ sbs_mardie <- function(
   saveWidget(interactive, file = paste0(dir, "seed", seed, "_", block_size, "m_sbs_interactive.html"))
 }
   
-sbs_mardie(seed = 10000, 
+sbs_mardie(seed = 909, 
            n_block = 20, 
            block_size = 1000, 
            n_trns = 60, 
