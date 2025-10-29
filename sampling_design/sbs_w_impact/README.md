@@ -22,9 +22,9 @@ sbs_mardie(seed = 909,          # iteration ID
             ymax = -20.8176 
 ```
 <p align = "center">
-<img src="https://raw.githubusercontent.com/grcvhon/bci-minerals/main/misc/seed909_1000m_sbs_transects_w_impact.png", width = 75%, height = 75%>
+<img src="https://raw.githubusercontent.com/grcvhon/bci-minerals/main/misc/909_w_impact_legend.png", width = 100%, height = 100%>
 <div align = "center">
-<sup>Spatially-balanced sampling design with impact. Twenty spatially-balanced sampling blocks (yellow) with 3 transect lines each (red).<br>Transect lines for spoil grounds (north, cyan) and two sets for each ends of the dredge area (closer to shore, cyan).</sup>
+<sup>Spatially-balanced sampling design with impact zones identified. Survey design as of 21 October 2025.</sup>
 </div>
 </p>
 
